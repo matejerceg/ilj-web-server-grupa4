@@ -1,0 +1,6 @@
+- vratiti jednostavan HTML koji ispiše koji je put (path) tražen u HTTP zahtjevu
+- vratiti popis datoteka koje se nalaze relativno u odnosi na neki direktorij
+- vratiti popis datoteka iz prethodnog zadatka, ali sada to moraju biti poveznice
+- ako nismo zatražili / onda treba svavkko u popis staviti i .. s linkom na prethodni direktorij
+- ispisati uz datoteke i njene veličine u oktetima
+- ispisati veličine u normalnom jedinicama npr. B, KB, MB
