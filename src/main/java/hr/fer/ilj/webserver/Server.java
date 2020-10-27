@@ -11,7 +11,7 @@ public class Server {
   private static final Logger LOG = LoggerFactory.getLogger(Server.class);
 
   public static void main(String[] args) {
-    try (ServerSocket ssc = new ServerSocket(8081);) {
+    try (ServerSocket ssc = new ServerSocket(8084);) {
       LOG.info("Server started and listening");
       while (true) {
         Socket scClient = ssc.accept();
