@@ -17,6 +17,7 @@ public class Protocol {
 	public String processInput(BufferedReader in) throws IOException {
 
 		String strline = in.readLine();
+		
 		System.out.println(strline);
 
 		Pattern pattern = Pattern.compile("GET (.*) HTTP/1.1");
@@ -28,10 +29,23 @@ public class Protocol {
 			path = matcher.group(1);
 		}
 		
-		String s1 = "HTTP/1.1 200 OK/r/n " + "ContentLength: " + strline.length() + "<html> <head> </head> <body> <p> "
-				+ path +  " </p> </body> </html>";
+		String html = generateHtml(path);
+		String s1 = "HTTP/1.1 200 OK/r/n " + "ContentLength: " + html.length() + html;
 		System.out.println(s1);
 		return s1;
+	}
+
+	private String generateHtml(String path) {
+		String html = "<html> <head> </head> <body> <p> "
+						+"put: "+ path +  " </p>"
+						+ "<h1>Datoteke:</h1>"
+						+ generateHtmlForFiles()
+						+ " </body> </html>";
+		return html;
+	}
+
+	public String generateHtmlForFiles() {
+		return "";
 	}
 
 }
